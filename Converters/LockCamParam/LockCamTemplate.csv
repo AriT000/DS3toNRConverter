@@ -1,0 +1,2 @@
+ID,Name,camDistTarget,rotRangeMinX,lockRotXShiftRatio,chrOrgOffset_Y,chrLockRangeMaxRadius,camFovY,chrLockRangeMaxRadius_forD,chrLockRangeMaxRadius_forPD,closeMaxHeight,closeMinHeight,closeAngRange,closeMaxRadius,closeMaxRadius_forD,closeMaxRadius_forPD,bulletMaxRadius,bulletMaxRadius_forD,bulletMaxRadius_forPD,bulletAngRange,lockTgtKeepTime,chrTransChaseRateForNormal,pad,
+4900,Unknown,6,-25,0.25,1.9,15,50,-1,-1,0,0,0,0,0,0,15,10,6,20,2,-1,[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]
