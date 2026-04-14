@@ -10,12 +10,11 @@ Converts Dark Souls 3 params to Nightreign
 4. Run `python -m venv .venv` *If this gives any errors, copy and paste the command you just ran + error message into google/chatgpt to fix them*.  
    Folder structure should look like this:  
    <img width="182" height="190" alt="Screenshot 2026-04-13 161242" src="https://github.com/user-attachments/assets/21272e0e-2b52-488e-96d0-8f2896a5d937" />
-6. Run `pip install pandas` *Again if errors, look them up and follow instructions*.
-7. Drag and drop all your exported DS3 param .csv files in the "input/" folder
+5. Run `pip install pandas` *Again if errors, look them up and follow instructions*.
+6. Drag and drop all your exported DS3 param .csv files in the "input/" folder
    Input folder should look like this:
    <img width="255" height="356" alt="Screenshot 2026-04-13 162755" src="https://github.com/user-attachments/assets/5f955ba8-0a84-4e57-8adf-eca637f35ff2" />
-9. Run `chmod +x ConvertAll.sh`
-10. Run `./ConvertAll.sh` to convert all param files at once
+7. Run `./ConvertAll.sh` to convert all param files at once
 
 *IMPORTANT: For SpEffectParam, you will probably have to convert all "-1" values to 0, or smithbox will crash. (this is probably because some fields are unsigned integers and don't accept negative values)
 
