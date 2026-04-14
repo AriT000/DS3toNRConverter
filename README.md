@@ -21,7 +21,7 @@ Converts Dark Souls 3 params to Nightreign
 
 *To run each one individually
 1. Change into the Converters/ folder with `cd Converters` and change into the folder for the param you want to convert with `cd AtkParam_Npc` for example.
-2. Now for converting AtkParams for example, run `python DS3toNR_ATKConverter.py AtkParam_Npc_midir.csv output.csv --template AtkTemplate.csv`
+2. Now for converting AtkParams for example, run `python DS3toNR_ATKConverter.py --source ../../input/AtkParam_Npc.csv --target AtkTemplate.csv --output ../../output/output.csv`
 
 From here you can import each csv file into your nightreign smithbox param editor.  
 
