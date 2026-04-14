@@ -182,7 +182,7 @@ def main() -> None:
 
     logging.basicConfig(
         level=logging.DEBUG if args.debug else logging.INFO,
-        format="%(asctime)s - %(levelname)s - %(message)s",
+        format="%(levelname)s - %(message)s",
     )
 
     input_path = Path(args.input)
