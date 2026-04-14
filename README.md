@@ -4,7 +4,7 @@ Converts Dark Souls 3 params to Nightreign
 - Install Python for Windows
 - Important: Make sure all the csv param files you want to convert have the name "AtkParam_Npc.csv" or "BehaviorParam.csv" for example. Smithbox should automatically import them in this naming format, but if not, make sure you do this.
 # Usage Instructions
-*You can convert params individually or all at once. Fully read the instructions.*
+*You can convert params individually or all at once. If you have any problems/question, read everything and feel free to reach out.*
 1. Click green Code button > Download ZIP. Extract to a folder called "DS3toNRConverter" or something.
 2. Make a folder in this folder called "input".
 3. Open Command Prompt in the DS3toNRConverter folder.
