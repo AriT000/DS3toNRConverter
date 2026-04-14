@@ -174,9 +174,21 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Convert Dark Souls 3 AtkParam_Npc CSV rows into a Nightreign-shaped CSV using an NR template."
     )
-    parser.add_argument("input", help="Path to DS3 AtkParam_Npc CSV")
-    parser.add_argument("output", nargs="?", help="Path to write converted Nightreign CSV")
-    parser.add_argument("--template", help="Path to Nightreign ATKTemplate.csv")
+    parser.add_argument(
+        "--source",
+        default="AtkParam_Npc.csv",
+        help="Path to the DS3 source CSV"
+    )
+    parser.add_argument(
+        "--target",
+        default="AtkTemplate.csv",
+        help="Path to the Nightreign template CSV"
+    )
+    parser.add_argument(
+        "--output",
+        default="AtkParam_Npc_DS3toNR.csv",
+        help="Path to write the converted CSV"
+    )
     parser.add_argument("--debug", action="store_true", help="Enable verbose logging")
     args = parser.parse_args()
 
@@ -185,12 +197,16 @@ def main() -> None:
         format="%(levelname)s - %(message)s",
     )
 
-    input_path = Path(args.input)
-    if not input_path.exists():
-        raise FileNotFoundError(f"Input CSV not found: {input_path}")
+    # input_path = Path(args.input)
+    # if not input_path.exists():
+    #     raise FileNotFoundError(f"Input CSV not found: {input_path}")
 
-    template_path = find_template(args.template)
-    output_path = Path(args.output) if args.output else input_path.with_name(input_path.stem + "_DS3toNR.csv")
+    # template_path = find_template(args.template)
+    # output_path = Path(args.output) if args.output else input_path.with_name(input_path.stem + "_DS3toNR.csv")
+
+    input_path = Path(args.source)
+    template_path = Path(args.target)
+    output_path = Path(args.output)
 
     convert(input_path, template_path, output_path)
 
