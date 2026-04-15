@@ -16,10 +16,11 @@ Converts Dark Souls 3 params to Nightreign
    Input folder should look like this:
    <img width="255" height="356" alt="Screenshot 2026-04-13 162755" src="https://github.com/user-attachments/assets/5f955ba8-0a84-4e57-8adf-eca637f35ff2" />
 7. Run `./ConvertAll.sh` to convert all param files at once
+8. Done! Converted params are in the "output/" folder. Important info ↓
 
-*IMPORTANT: For SpEffectParam, you will probably have to convert all "-1" values to 0, or smithbox will crash. (this is probably because some fields are unsigned integers and don't accept negative values)
+*IMPORTANT: For SpEffectParam, you will probably have to change all "-1" values to 0, or smithbox will crash. (this is probably because some fields are unsigned integers and don't accept negative values)
 
-*To run each one individually
+*If you want to convert a param individually:  
 1. Change into the Converters/ folder with `cd Converters` and change into the folder for the param you want to convert with `cd AtkParam_Npc` for example.
 2. Now for converting AtkParams for example, run `python DS3toNR_ATKConverter.py --source ../../input/AtkParam_Npc.csv --target AtkTemplate.csv --output ../../output/output.csv`
 
