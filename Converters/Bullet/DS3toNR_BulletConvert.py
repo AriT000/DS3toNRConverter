@@ -40,6 +40,32 @@ def build_column_map(source_columns: List[str], target_columns: List[str]) -> Tu
     return mapping, unmapped
 
 
+def fix_signed_byte_fields(row: pd.Series) -> pd.Series:
+    """
+    Fix DS3 -> Nightreign fields that are stored differently.
+
+    shootAngleXZ:
+    - DS3 can export this as wrapped unsigned byte values like 241, 236, 231
+    - Nightreign expects a signed byte range
+    - Convert values > 127 into signed-byte equivalents by subtracting 256
+    """
+    field = "shootAngleXZ"
+
+    if field in row:
+        raw = str(row[field]).strip()
+        if raw != "":
+            try:
+                value = int(raw)
+                if value > 127:
+                    fixed = value - 256
+                    logging.debug("%s: %s -> %s", field, value, fixed)
+                    row[field] = str(fixed)
+            except ValueError:
+                logging.warning("Could not parse %s value: %r", field, raw)
+
+    return row
+
+
 def convert(source_csv: Path, target_csv: Path, output_csv: Path) -> None:
     logging.info("Loading DS3 Bullet CSV: %s", source_csv)
     source_df = load_csv(source_csv)
@@ -68,6 +94,7 @@ def convert(source_csv: Path, target_csv: Path, output_csv: Path) -> None:
             if src_val != "":
                 new_row[dst_col] = src_val
 
+        new_row = fix_signed_byte_fields(new_row)
         converted_rows.append(new_row)
 
     out_df = pd.DataFrame(converted_rows, columns=target_columns)
